@@ -4,7 +4,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Game(
+data class Game(
     var name: String,
     var director: String,
     var developer: String,
