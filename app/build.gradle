@@ -57,4 +57,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$version_room"
     implementation "androidx.room:room-ktx:$version_room"
     testImplementation "androidx.room:room-testing:$version_room"
+
+    def version_recycler = '29.0.1'
+    implementation "com.android.support:design:$version_recycler"
+    implementation "com.android.support:recyclerview-v7:$version_recycler"
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 }

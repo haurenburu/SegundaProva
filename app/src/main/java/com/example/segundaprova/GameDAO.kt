@@ -12,7 +12,7 @@ interface GameDAO {
     fun update(game: Game): Int
     // listar todos
     @Query("SELECT * FROM game_table")
-    fun listAll(): Array<Game>
+    fun listAll(): MutableList<Game>
     // listar por ID
     @Query("SELECT * FROM game_table WHERE id = :id")
     fun findById(id: Long): Game

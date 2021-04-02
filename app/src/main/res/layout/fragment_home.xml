@@ -7,11 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".HomeFragment">
 
-        <TextView
-            android:id="@+id/texto"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerGameList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            tools:listitem="@layout/game_inflater"
+            />
 
     </FrameLayout>
 </layout>
