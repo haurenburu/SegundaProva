@@ -3,7 +3,7 @@ package com.example.segundaprova
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "game_table")
 data class Game(
     var name: String,
     var director: String,

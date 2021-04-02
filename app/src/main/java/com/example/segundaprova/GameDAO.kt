@@ -11,10 +11,10 @@ interface GameDAO {
     @Update
     fun update(game: Game): Int
     // listar todos
-    @Query("SELECT * FROM game")
-    fun findGame(id: Long): Array<Game>
+    @Query("SELECT * FROM game_table")
+    fun listAll(): Array<Game>
     // listar por ID
-    @Query("SELECT * FROM game WHERE id = :id")
+    @Query("SELECT * FROM game_table WHERE id = :id")
     fun findById(id: Long): Game
     // excluir
     @Delete
