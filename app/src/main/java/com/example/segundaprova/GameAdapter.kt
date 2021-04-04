@@ -16,7 +16,7 @@ class GameAdapter : RecyclerView.Adapter<GameViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-        val selectedGame = games.get(position)
+        val selectedGame = games[position]
         holder.gameName.text = selectedGame.name
     }
 
