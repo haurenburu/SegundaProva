@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity() {
 //            insert(game4)
 //        }
 
-        val gl:MutableList<Game> = db.gameDao().listAll();
-        val adapter = GameAdapter()
-        adapter.games = gl
+//        val gl:MutableList<Game> = db.gameDao().listAll();
+//        val adapter = GameAdapter()
+//        adapter.games = gl
     }
 }

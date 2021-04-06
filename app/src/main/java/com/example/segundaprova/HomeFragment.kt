@@ -17,11 +17,11 @@ class HomeFragment : Fragment() {
     lateinit var viewmodel: HomeFragViewModel
 
 
-    private val db: AppDatabase by lazy {
-        Room.databaseBuilder(parentFragment?.context!!, AppDatabase::class.java, "games.sqlite")
-            .allowMainThreadQueries()
-            .build()
-    }
+//    private val db: AppDatabase by lazy {
+//        Room.databaseBuilder(parentFragment?.context!!, AppDatabase::class.java, "games.sqlite")
+//            .allowMainThreadQueries()
+//            .build()
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +31,17 @@ class HomeFragment : Fragment() {
         viewmodel = ViewModelProvider(this).get(HomeFragViewModel::class.java)
 
         val adapter = GameAdapter()
-        adapter.games = db.gameDao().listAll()
-        val layout = LinearLayoutManager(parentFragment?.context!!, LinearLayoutManager.VERTICAL, false)
-
         binding.recyclerGameList.adapter = adapter
+
+        viewmodel.list.observe(viewLifecycleOwner, {
+            adapter.games = it
+            adapter.notifyDataSetChanged()
+        })
+
+        //adapter.games = db.gameDao().listAll()
+
+
+        val layout = LinearLayoutManager(parentFragment?.context!!, LinearLayoutManager.VERTICAL, false)
         binding.recyclerGameList.layoutManager = layout
 
         return binding.root
