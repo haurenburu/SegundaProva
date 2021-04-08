@@ -18,4 +18,9 @@
         android:id="@+id/cadastraFragment"
         android:name="com.example.segundaprova.CadastraFragment"
         android:label="CadastraFragment" />
+    <fragment
+        android:id="@+id/sobreFragment"
+        android:name="com.example.segundaprova.SobreFragment"
+        android:label="fragment_sobre"
+        tools:layout="@layout/fragment_sobre" />
 </navigation>
