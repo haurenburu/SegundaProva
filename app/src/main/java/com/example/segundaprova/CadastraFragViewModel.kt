@@ -26,7 +26,7 @@ class CadastraFragViewModel(application: Application) : AndroidViewModel(applica
     var rating: Int = 0
 
     fun createGame() {
-        CreateGameAsync().execute()
+        CreateGameAsync().execute().get()
     }
 
     @SuppressLint("StaticFieldLeak")

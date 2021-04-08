@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
         binding.recyclerGameList.adapter = adapter
 
         viewmodel.list.observe(viewLifecycleOwner, {
-            adapter.games = it
+            adapter.games = it as MutableList<Game>
             adapter.notifyDataSetChanged()
         })
 
