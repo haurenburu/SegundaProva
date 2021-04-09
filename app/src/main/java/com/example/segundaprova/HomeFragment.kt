@@ -3,6 +3,7 @@ package com.example.segundaprova
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
@@ -28,7 +29,7 @@ class HomeFragment : Fragment() {
         binding.recyclerGameList.adapter = adapter
 
         viewmodel.list.observe(viewLifecycleOwner, {
-            adapter.games = it as MutableList<Game>
+            adapter.games = it
             adapter.notifyDataSetChanged()
         })
 
@@ -37,6 +38,20 @@ class HomeFragment : Fragment() {
         val layout = LinearLayoutManager(parentFragment?.requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.recyclerGameList.layoutManager = layout
 
+        binding.recyclerGameList.addOnItemTouchListener(
+            RecyclerViewClickListener(this.requireContext(),
+                binding.recyclerGameList,
+                object : RecyclerViewClickListener.onItemClickListener {
+                    override fun onItemCLick(v: View, position: Int) {
+                        Toast.makeText(context, "click simples", Toast.LENGTH_SHORT).show()
+                    }
+
+                    override fun onItemLongClick(v: View, position: Int) {
+                        Toast.makeText(context, "click longo", Toast.LENGTH_SHORT).show()
+                    }
+
+                })
+        )
         return binding.root
     }
 
