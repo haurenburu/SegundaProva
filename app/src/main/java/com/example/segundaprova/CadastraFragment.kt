@@ -24,10 +24,10 @@ class CadastraFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_cadastra, container, false)
         viewmodel = ViewModelProvider(this).get(CadastraFragViewModel::class.java)
 
+        /*
         binding.editTextName.addTextChangedListener {
             viewmodel.name = binding.editTextName.text.toString()
         }
-
         binding.editTextDirector.addTextChangedListener {
             viewmodel.director = binding.editTextDirector.text.toString()
         }
@@ -44,16 +44,17 @@ class CadastraFragment : Fragment() {
             viewmodel.releaseYear = binding.editTextRating.text.toString().toInt()
         }
 
+        */
+
         binding.button.setOnClickListener {
+            viewmodel.name = binding.editTextName.text.toString()
+            viewmodel.director = binding.editTextDirector.text.toString()
+            viewmodel.developer = binding.editTextDeveloper.text.toString()
+            viewmodel.publisher = binding.editTextPublisher.text.toString()
+            viewmodel.releaseYear = binding.editTextReleaseYear.text.toString().toInt()
+            viewmodel.releaseYear = binding.editTextRating.text.toString().toInt()
+
             viewmodel.createGame()
-//            val g = Game(
-//                viewmodel.name,
-//                viewmodel.director,
-//                viewmodel.developer,
-//                viewmodel.publisher,
-//                viewmodel.releaseYear,
-//                viewmodel.rating
-//            )
         }
 
         return binding.root

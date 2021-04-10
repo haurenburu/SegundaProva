@@ -16,7 +16,7 @@ interface GameDAO {
     fun listAll(): LiveData<List<Game>>
     // listar por ID
     @Query("SELECT * FROM game_table WHERE id = :id")
-    fun findById(id: Long): Game
+    fun findById(id: Int): Game
     // excluir
     @Delete
     fun delete(game: Game): Int

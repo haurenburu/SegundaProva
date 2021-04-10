@@ -13,5 +13,5 @@ data class Game(
     var rating: Int
 ) {
     @PrimaryKey(autoGenerate = true)
-    var id = 0
+    var id: Int = 0
 }

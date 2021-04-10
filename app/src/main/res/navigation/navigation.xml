@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_alteraFragment"
             app:destination="@id/alteraFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detalhesFragment"
+            app:destination="@id/detalhesFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastraFragment"
@@ -36,4 +39,9 @@
             app:argType="integer"
             android:defaultValue="1" />
     </fragment>
+    <fragment
+        android:id="@+id/detalhesFragment"
+        android:name="com.example.segundaprova.DetalhesFragment"
+        android:label="fragment_detalhes"
+        tools:layout="@layout/fragment_detalhes" />
 </navigation>
