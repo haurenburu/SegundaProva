@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_cadastraFragment"
             app:destination="@id/cadastraFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_alteraFragment"
+            app:destination="@id/alteraFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastraFragment"
@@ -23,4 +26,14 @@
         android:name="com.example.segundaprova.SobreFragment"
         android:label="fragment_sobre"
         tools:layout="@layout/fragment_sobre" />
+    <fragment
+        android:id="@+id/alteraFragment"
+        android:name="com.example.segundaprova.AlteraFragment"
+        android:label="fragment_altera"
+        tools:layout="@layout/fragment_altera" >
+        <argument
+            android:name="gameid"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
 </navigation>

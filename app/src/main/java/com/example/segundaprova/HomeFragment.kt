@@ -1,7 +1,6 @@
 package com.example.segundaprova
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -11,7 +10,6 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import com.example.segundaprova.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -43,13 +41,14 @@ class HomeFragment : Fragment() {
                 binding.recyclerGameList,
                 object : RecyclerViewClickListener.onItemClickListener {
                     override fun onItemCLick(v: View, position: Int) {
-                        Toast.makeText(context, "click simples", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "click", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onItemLongClick(v: View, position: Int) {
-                        Toast.makeText(context, "click longo", Toast.LENGTH_SHORT).show()
+                        Navigation.findNavController(v).navigate(
+                            HomeFragmentDirections.actionHomeFragmentToAlteraFragment().setGameid(viewmodel.list.value!![position].id)
+                        )
                     }
-
                 })
         )
         return binding.root
