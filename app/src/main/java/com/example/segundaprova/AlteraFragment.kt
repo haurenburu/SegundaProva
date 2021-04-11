@@ -26,7 +26,12 @@ class AlteraFragment : Fragment() {
 
         viewmodel.getGame(args.gameid)
 
+        binding.editTextNameAl.setText(viewmodel.name)
+        binding.editTextDirectorAl.setText(viewmodel.director)
+        binding.editTextPublisherAl.setText(viewmodel.publisher)
         binding.editTextDeveloperAl.setText(viewmodel.developer)
+        binding.editTextReleaseYearAl.setText(viewmodel.releaseYear)
+        binding.editTextRatingAl.setText(viewmodel.rating)
 
         return binding.root
     }

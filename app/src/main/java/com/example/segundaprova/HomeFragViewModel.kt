@@ -8,7 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Room
 
 class HomeFragViewModel(application: Application) : AndroidViewModel(application) {
-    var list: LiveData<List<Game>>
+    lateinit var list: LiveData<List<Game>>
 
     var dba: AppDatabase
 
@@ -19,6 +19,9 @@ class HomeFragViewModel(application: Application) : AndroidViewModel(application
                 .build()
         }
         dba = db
+        list = FindAllAsync().execute().get()
+    }
+    fun update() {
         list = FindAllAsync().execute().get()
     }
 

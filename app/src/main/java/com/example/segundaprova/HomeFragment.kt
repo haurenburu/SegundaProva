@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
                     }
                 })
         )
+        viewmodel.update()
         return binding.root
     }
 
